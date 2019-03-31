@@ -1,10 +1,10 @@
 <?php
-   //spl_autoload_register(function ($class) {
-   //   include "../../class/message/$class.class.php";
-   //});
-   $message = $_GET['message'] ?? ''; 
-   //messagefactory::createmessage($_GET['type']) : false;
-   //$message_out = $message ? $message->getmessage($_GET['message']) : '';
+    spl_autoload_register(function ($class) {
+      include "../../class/Message/$class.class.php";
+    });
+    $message = isset($_GET['message']) && isset($_GET['type']) ? 
+    MessageFactory::createMessage($_GET['type']) : false;
+    $message_out = $message ? $message->getmessage($_GET['message']) : '';
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -24,7 +24,7 @@
     <form class="form-signin" method="post" action="validar_login.php">
         <img class="mb-4" src="../../img/romuloblog.png" alt="" width="242" height="36">
         <h1 class="h3 mb-3 font-weight-normal">Formulário de Login</h1>
-        <?php echo $message; ?>
+        <?php echo $message_out; ?>
         <label for="inputEmail" class="sr-only">Email</label>
         <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>-->
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email">

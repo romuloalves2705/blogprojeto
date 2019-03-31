@@ -9,7 +9,7 @@
       $email = $_POST['email'] ?? '';
       $password = $_POST['password'] ?? '';
       if(empty($email) or empty($password)) {
-         header('location: login.php?message=Usuário ou senha não digitado');
+         header('location: login.php?message=Usuário ou senha não digitado &type=successMessage');
       }
       // ' OR '1' ='1
       $login = new Login(new Conexion);
@@ -26,7 +26,7 @@
       //   $session->addValue('usuario', $row['usuario_dev']);
       //   header('location: ../dashboard.php');
       } else {
-         header('location: login.php?message=Usuário ou senha inválidos');
+         header('location: login.php?message=Usuário ou senha inválidos &type=warningMessage');
       }   
    }
 ?>
