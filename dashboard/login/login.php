@@ -1,3 +1,11 @@
+<?php
+   //spl_autoload_register(function ($class) {
+   //   include "../../class/message/$class.class.php";
+   //});
+   $message = $_GET['message'] ?? ''; 
+   //messagefactory::createmessage($_GET['type']) : false;
+   //$message_out = $message ? $message->getmessage($_GET['message']) : '';
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -16,13 +24,14 @@
     <form class="form-signin" method="post" action="validar_login.php">
         <img class="mb-4" src="../../img/romuloblog.png" alt="" width="242" height="36">
         <h1 class="h3 mb-3 font-weight-normal">Formulário de Login</h1>
+        <?php echo $message; ?>
         <label for="inputEmail" class="sr-only">Email</label>
         <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>-->
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email">
         <label for="inputPassword" class="sr-only">Senha</label>
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Senha">
         <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Entrar</button>
-        <p class="mt-5 mb-3 text-muted">&copy; Romulo Blog 2019</p>
+        <p class="mt-5 mb-3 text-muted">&copy; ROMULO BLOG 2019</p>
     </form>
 </body>
 </html> 
