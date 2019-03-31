@@ -12,10 +12,12 @@
          header('location: login.php?message=Usuário ou senha não digitado');
       }
 
-      $login = new Login();
-      var_dump($login);
-      //$login->setEmail($email);
-      //$login->setPassword($password);
+      $login = new Login(new Conexion);
+      //var_dump($login);
+      $login->setEmail($email);
+      $login->setPassword($password);
+      if ($login->signIn()) {
+         echo 'Senha válida';
       //$row = $login->signIn();
       //if($row) {
       //   $session = new Session();
@@ -23,8 +25,8 @@
       //   $session->addValue('id',$row['id_dev']);
       //   $session->addValue('usuario', $row['usuario_dev']);
       //   header('location: ../dashboard.php');
-      //} else {
-      //   header('location: login.php?message=Usuário ou senha inválidos &type=warningmessage');
-      //}   
+      } else {
+         header('location: login.php?message=Usuário ou senha inválidos &type=warningmessage');
+      }   
    }
 ?>

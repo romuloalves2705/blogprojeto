@@ -21,8 +21,4 @@
          $this->set_charset(CONF_DB_CHARSET);
       }
    }
-
-   $conn = new Conexion();
-   var_dump($conn);
-   
 ?>
