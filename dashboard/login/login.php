@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Meu Blog">
     <meta name="author" content="Romulo Alves">
-    <title>Login | Meu Blog</title>
+    <title>Login | Romulo Blog</title>
     <link rel="icon" href="../../img/blogicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="../../css/bootstrap.css">
@@ -21,11 +21,6 @@
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email">
         <label for="inputPassword" class="sr-only">Senha</label>
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Senha">
-        <div class="checkbox mb-3" style="float:left">
-            <label class="float:left">
-                <input type="checkbox" value="remember-me">Lembrar me
-            </label>
-        </div>
         <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Entrar</button>
         <p class="mt-5 mb-3 text-muted">&copy; Romulo Blog 2019</p>
     </form>
