@@ -11,7 +11,7 @@
       if(empty($email) or empty($password)) {
          header('location: login.php?message=Usuário ou senha não digitado');
       }
-
+      // ' OR '1' ='1
       $login = new Login(new Conexion);
       //var_dump($login);
       $login->setEmail($email);
@@ -26,7 +26,7 @@
       //   $session->addValue('usuario', $row['usuario_dev']);
       //   header('location: ../dashboard.php');
       } else {
-         header('location: login.php?message=Usuário ou senha inválidos &type=warningmessage');
+         header('location: login.php?message=Usuário ou senha inválidos');
       }   
    }
 ?>

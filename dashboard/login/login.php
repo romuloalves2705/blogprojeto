@@ -29,7 +29,7 @@
         <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>-->
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email">
         <label for="inputPassword" class="sr-only">Senha</label>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Senha">
+        <input type="text" id="inputPassword" name="password" class="form-control" placeholder="Senha">
         <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Entrar</button>
         <p class="mt-5 mb-3 text-muted">&copy; ROMULO BLOG 2019</p>
     </form>
