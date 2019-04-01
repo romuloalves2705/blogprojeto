@@ -39,7 +39,7 @@
                   <label for="new_categorie">Nova categoria</label>
                   <input type="text" name="new_categorie" class="form-control" id="new_categorie" placeholder="Nova categoria">
                </div>
-               <button type="submit" class="btn btn-default btn-block">Salvar</button>
+               <button type="submit" id="submit_categorie" class="btn btn-default btn-block">Salvar</button>
             </form>
          </div>
       </div>
