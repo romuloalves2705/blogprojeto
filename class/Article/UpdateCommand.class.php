@@ -7,12 +7,9 @@
          $this->article = $article;
       }
 
-      public function exec(){
-        $this->article->update();
+      public function exec() {
+         echo '*' . __CLASS__ . '-> exec</br>';
+         return $this->article->update();
       }
-
-      //public function exec(): int{
-      //   return $this->article->update();
-      //}
    }
 ?>   

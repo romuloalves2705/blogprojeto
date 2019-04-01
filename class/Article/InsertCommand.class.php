@@ -8,10 +8,8 @@
       }
       
       public function exec() {
-          $this->article->insert();
+         echo '*' . __CLASS__ . '-> exec</br>';
+         return $this->article->insert();
       }
-      //public function exec(): int{
-      //   return $this->article->insert();
-      //}
    }
 ?>

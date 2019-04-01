@@ -8,11 +8,8 @@
       }
       
       public function exec() {
-         $this->article->delete();
+         echo '*' . __CLASS__ . '-> exec</br>';
+         return $this->article->delete();
       }
-
-      //public function exec(): int{
-      //   return $this->article->delete();
-      //}
    }
 ?>

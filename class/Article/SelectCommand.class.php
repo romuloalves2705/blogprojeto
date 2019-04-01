@@ -6,12 +6,10 @@
       public function __construct(Article $article){
          $this->article = $article;
       }
-      
+   
       public function exec() {
-          $this->article->select();
+         echo '*' . __CLASS__ . '-> exec</br>';
+         return $this->article->select();
       }
-      //public function exec(): mysqli_result{
-      //   return $this->article->select();
-      //}
    }
 ?>   
