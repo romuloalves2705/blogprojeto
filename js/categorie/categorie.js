@@ -3,7 +3,7 @@ $(document).ready(function(){
       var categorie = $('#new_categorie').val()
       $.ajax({
          type: 'POST',
-         url: '../functions/categorie/categorieInsert.php',
+         url: '../functions/categorieInsert.php',
          data: { 'categorie': categorie }
       })
       .done(function(result){

@@ -17,10 +17,9 @@
          $query = "INSERT INTO `categoria`(`categoria`) VALUES ('$this->name')";
          //$this->con->query($query);
          //return $this->con->affected_rows;
-         //$res = $this->con->query($query);
          if ($this->con->query($query)) 
             return 'Categoria adicionada com sucesso';
-            return 'Houve um error';
+            return 'Houve um erro ao adicionar a nova categoria';
       }
 
       //public function select() {
