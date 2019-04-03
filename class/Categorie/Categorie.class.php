@@ -10,7 +10,7 @@
 
       public function setName($name) {
          $this->name = $this->con->real_escape_string($name);
-      //   $this->name = ucwords($this->name);
+         $this->name = ucwords($this->name);
       }
 
       public function insert() {
@@ -22,10 +22,16 @@
             return 'Houve um erro ao adicionar a nova categoria';
       }
 
-      //public function select() {
-      //   $query = "SELECT * FROM `categoria`";
+      public function selectToArray() {
+         $query = "SELECT * FROM `categoria`";
+         $res = $this->con->query($query);
+         $categorias = '<option value="Não">Esconha uma categoria</option>';
+         while($row = $res->fetch_array(MYSQLI_ASSOC)) {
+            $categorias .= "<option value='$row[categoria_id]'>$row[categoria]</option>";
+         }
+         return $categorias;
       //   return $this->con->query($query);
-      //}
+      }
    }
 ?>   
 

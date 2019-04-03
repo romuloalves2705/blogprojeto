@@ -2,29 +2,29 @@
 
    class Article {
       public $con;
-      //public $title;
+      public $title;
       //public $author;
-      //public $categorie_id;
-      //public $content;
+      public $categorie_id;
+      public $content;
       //public $img;
       //public $article_id;
 
       public function __construct(Conexion $con){
          $this->con = $con;
       }
-      //public function setTitle(string $title){
-      //   $this->title = $this->con->real_escape_string($title);
+      public function setTitle(string $title){
+         $this->title = $this->con->real_escape_string($title);
       //   $this->title = ucwords($this->title);
-      //}
+      }
       //public function setAuthor(string $author){
       //   $this->author = $this->con->real_escape_string($author);
       //}
-      //public function setCategorieId(int $categorie_id){
-      //   $this->categorie_id = $this->con->real_escape_string($categorie_id);
-      //}
-      //public function setContent(string $content){
-      //   $this->content = $this->con->real_escape_string($content);
-      //}
+      public function setCategorieId($categorie_id){
+         $this->categorie_id = $this->con->real_escape_string($categorie_id);
+      }
+      public function setContent($content){
+         $this->content = $this->con->real_escape_string($content);
+      }
       //public function setImg(string $img){
       //   $this->img = $this->con->real_escape_string($img);
       //}
