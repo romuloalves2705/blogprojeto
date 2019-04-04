@@ -20,7 +20,7 @@
                            <th>Delete</th>
                         </tr>
                      </thead>
-                     <tbody>
+                     <tbody id="articles">
                      </tbody>
                   </table>
                </div>

@@ -4,5 +4,6 @@
    <script src="../js/jquery.js"></script>
    <script src="../js/bootstrap.js"></script>
    <script src="../js/categorie/categorie.js"></script>
+   <script src="../js/article/article.js"></script>
 </body>
 </html> 

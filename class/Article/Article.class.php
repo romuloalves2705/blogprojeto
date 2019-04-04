@@ -31,9 +31,15 @@
       //public function setArticleId(int $article_id){
       //   $this->article_id = $this->con->real_escape_string($article_id);
       //}
+
       public function select() {
-         return 'select';
+         $query = "SELECT * FROM `articulo`";
+      //   if ($this->article_id) {
+      //      $query .= "WHERE `articulo_id` = $this->article_id";
+      //   }
+         return $this->con->query($query);
       }
+
       public function insert() {
          $query = "INSERT INTO `articulo`(`categoria_id`, `autor`, `titulo`, `contenido`, `fecha`, `img`) VALUES
          ($this->categorie_id, '$this->author', '$this->title', '$this->content', '" . date('Y-m-d') . "', '$this->img')";
@@ -49,13 +55,7 @@
       public function delete() {
          return 'delete';
       }
-      //public function select(): mysqli_result{
-      //   $query = "SELECT * FROM `articulo`";
-      //   if ($this->article_id) {
-      //      $query .= "WHERE `articulo_id` = $this->article_id";
-      //   }
-      //   return $this->con->query($query);
-      //}
+      
       //public function update(): int{
       //   if ($this->img) {
       //      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
