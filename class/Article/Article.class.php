@@ -7,36 +7,44 @@
       public $categorie_id;
       public $content;
       public $img;
-      //public $article_id;
+      public $article_id;
 
       public function __construct(Conexion $con){
          $this->con = $con;
       }
+
       public function setTitle(string $title){
          $this->title = $this->con->real_escape_string($title);
       //   $this->title = ucwords($this->title);
       }
+
       public function setAuthor(string $author){
          $this->author = $this->con->real_escape_string($author);
       }
+
       public function setCategorieId($categorie_id){
          $this->categorie_id = $this->con->real_escape_string($categorie_id);
       }
+
       public function setContent($content){
          $this->content = $this->con->real_escape_string($content);
       }
+
       public function setImg($img){
          $this->img = $this->con->real_escape_string($img);
       }
-      //public function setArticleId(int $article_id){
-      //   $this->article_id = $this->con->real_escape_string($article_id);
-      //}
+
+      public function setArticleId($article_id){
+         $this->article_id = $this->con->real_escape_string($article_id);
+      }
 
       public function select() {
-         $query = "SELECT * FROM `articulo`";
-      //   if ($this->article_id) {
+         if (empty($this->article_id)) {
+            $query = "SELECT * FROM `articulo`";
+            return $this->con->query($query);
       //      $query .= "WHERE `articulo_id` = $this->article_id";
-      //   }
+         }
+         $query = "SELECT * FROM `articulo` WHERE `articulo_id` = $this->article_id";
          return $this->con->query($query);
       }
 

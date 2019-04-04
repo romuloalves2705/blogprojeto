@@ -15,6 +15,7 @@
          $this->db   = CONF_DB_DATABASE;
       
          parent::__construct($this->host, $this->user, $this->pass, $this->db);
+         $this->setCharset();
       }
 
       public function setCharset() {
