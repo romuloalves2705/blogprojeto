@@ -9,14 +9,15 @@
                <h1 class="page-header">Dashboard</h1>
                <h2 class="sub-header">Lista de Posts</h2>
                <div class="table-responsive">
-                  <table class="table table-striped">
+                  <table class="table table-striped table-hover">
                      <thead>
                         <tr>
-                           <th>#</th>
-                           <th>Header</th>
-                           <th>Header</th>
-                           <th>Header</th>
-                           <th>Header</th>
+                           <th>#Id</th>
+                           <th>Autor</th>
+                           <th>Data</th>
+                           <th>Titulo</th>
+                           <th>Editar</th>
+                           <th>Delete</th>
                         </tr>
                      </thead>
                      <tbody>

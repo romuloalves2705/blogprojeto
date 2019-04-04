@@ -1,5 +1,6 @@
 <?php
  
+   date_default_timezone_set("America/Sao_Paulo");
    define('CONF_DB_HOST', 'localhost');
    define('CONF_DB_USER', 'root');
    define('CONF_DB_PASS', '');
