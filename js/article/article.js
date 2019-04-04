@@ -22,7 +22,7 @@ function imprimir_tabla() {
          //listen_delete()
       })
       .fail(function() {
-         alert('Houve um error ao carregar os artigos :( ')
+         alert('Houve um error ao imprimir as artigos :( ')
       })
 }
 
@@ -38,13 +38,13 @@ function mostrar_valores_inputs(search) {
          //$('#articles').html(result)
          var obj = $.parseJSON(result)
          //alert(result.titulo)
-         console.log(obj.titulo)
+         //console.log(obj.titulo)
 //         if (!result) return alert('Hubo un error al cargar la información :(')
 //         var obj = $.parseJSON(result)
          $('#title').val(obj.titulo)
-//         $('#content').val(obj.contenido)
-//         updateSelectCategorie(obj.categoria_id)
-//         $('#id_article').val(obj.articulo_id)
+         $('#content').val(obj.contenido)
+         updateSelectCategorie(obj.categoria_id)
+         $('#id_article').val(obj.articulo_id)
       })
       .fail(function () {
          alert('Houve um error ao carregar os artigos :( ')

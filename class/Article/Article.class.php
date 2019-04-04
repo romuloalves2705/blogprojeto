@@ -42,7 +42,6 @@
          if (empty($this->article_id)) {
             $query = "SELECT * FROM `articulo`";
             return $this->con->query($query);
-      //      $query .= "WHERE `articulo_id` = $this->article_id";
          }
          $query = "SELECT * FROM `articulo` WHERE `articulo_id` = $this->article_id";
          return $this->con->query($query);
@@ -57,22 +56,28 @@
          }
          return true;
       }
+
       public function update() {
-         return 'update';
+         if(empty($this->img)) {
+            $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', 
+               `contenido`= '$this->content' WHERE `articulo_id` = $this->article_id";
+         } else {
+            $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', 
+               `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
+         }
+        
+         $this->con->query($query);
+         if($this->con->affected_rows <= 0) {
+            return false;
+         }
+         return true;
       }
+
       public function delete() {
          return 'delete';
       }
       
-      //public function update(): int{
-      //   if ($this->img) {
-      //      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
-      //   } else {
-      //      $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', `contenido`= '$this->content' WHERE `articulo_id` = $this->article_id";
-      //   }
-      //   $this->con->query($query);
-      //   return $this->con->affected_rows;
-      //}
+      
       //public function delete(): int{
       //   $query = "DELETE FROM `articulo` WHERE `articulo_id` = $this->article_id";
       //   $this->con->query($query);
