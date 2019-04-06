@@ -1,6 +1,11 @@
 <?php
+   spl_autoload_register(function ($class) {
+      include "../../class/Mensagem/$class.class.php";
+   });
 
-   $message = $_GET['message'] ?? '';
+   $mensagem = isset($_GET['mensagem']) && isset($_GET['type']) ? 
+   MensagemFactory::createMensagem($_GET['type']) : false;
+   $mensagem_out = $mensagem ? $mensagem->getMensagem($_GET['mensagem']) : '';
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -19,7 +24,7 @@
    <form class="form-signin" method="post" action="validar_login.php">
       <img class="mb-4" src="../../img/romuloblog.png" alt="romuloblog" width="242" height="36">
       <h1 class="h3 mb-3 font-weight-normal">Formulário de login</h1>
-      <?php echo $message; ?>
+      <?php echo $mensagem_out; ?>
       <label for="inputEmail" class="sr-only">E-mail</label>
       <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Digite seu email" autofocus>
       <label for="inputPassword" class="sr-only">Senha</label>
