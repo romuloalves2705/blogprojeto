@@ -12,9 +12,13 @@
       }
 
       $login = new Login(new Conexao);
-      var_dump($login);
-   //   $login->setEmail($email);
-   //   $login->setPassword($password);
+      $login->setEmail($email);
+      $login->setPassword($password);
+      if ($login->signIn()) {
+         echo 'Credenciais válidas';
+      } else {
+         header('location: login.php?message=Usuário ou senha inválidos');
+      }
    //   $row = $login->signIn();
    //   if ($row) {
    //      $session = new Session();
