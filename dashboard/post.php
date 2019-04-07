@@ -8,29 +8,28 @@
       <?php require 'sidebar.php'; ?>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
          <h1 class="page-header">Painel Admin</h1>
-         <div class="row placeholder"></div>
          <h2 class="sub-header">Lista de Posts</h2>
       </div>
       <div class="row">
          <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-            <form>
+            <form action="../functions/artigo/insert.php" method="POST">
                <div class="form-group">
                   <label for="titulo">Título</label>
                   <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="tituloHelp" placeholder="Novo titulo">
                </div>
                <div class="form-group">
                   <label for="categoria">Categoria</label>
-                  <select class="form-control" id="categoria"></select>
+                  <select name="categoria_id" class="form-control" id="categoria"></select>
                </div>
                <div class="form-group">
                   <label for="conteudo">Conteúdo</label>
-                  <textarea name="conteudo" class="form-control" id="conteudo" rows="3" placeholder="Conteúdo aqui..."></textarea>
+                  <textarea name="conteudo" class="form-control" id="conteudo" rows="5" placeholder="Conteúdo aqui..."></textarea>
                </div>
                <div class="form-group">
                   <label for="exampleInputFile">Entrada de Arquivo</label>
                   <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="entradadearquivoHelp">
                </div>
-               <button type="submit" class="btn btn-primary">Enviar</button>
+               <button name="submit" type="submit" class="btn btn-primary">Enviar</button>
             </form>
          </div>
          <div class="col-md-2 main">

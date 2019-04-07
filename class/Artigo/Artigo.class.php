@@ -2,16 +2,30 @@
 
    class Artigo {
       private $con;
-      //public $title;
+      public $titulo;
       //public $author;
-      //public $categorie_id;
-      //public $content;
+      public $categoria_id;
+      public $conteudo;
       //public $img;
       //public $article_id;
 
       public function __construct(Conexao $con){
          $this->con = $con;
       }
+
+      public function setTitulo($titulo){
+         $this->titulo = $this->con->real_escape_string($titulo);
+      //   $this->title = ucwords($this->title);
+      }
+
+      public function setCategoriaId($categoria_id){
+         $this->categoria_id = $this->con->real_escape_string($categoria_id);
+      }
+
+      public function setConteudo($conteudo){
+         $this->conteudo = $this->con->real_escape_string($conteudo);
+      }
+
 
       public function select(){
          return 'select';
@@ -29,23 +43,13 @@
          return 'delete';
       }
 
-      //public function setTitle(string $title){
-      //   $this->title = $this->con->real_escape_string($title);
-      //   $this->title = ucwords($this->title);
-      //}
+      
 
       //public function setAuthor(string $author){
       //   $this->author = $this->con->real_escape_string($author);
       //}
 
-      //public function setCategorieId($categorie_id){
-      //   $this->categorie_id = $this->con->real_escape_string($categorie_id);
-      //}
-
-      //public function setContent($content){
-      //   $this->content = $this->con->real_escape_string($content);
-      //}
-
+      
       //public function setImg($img){
       //   $this->img = $this->con->real_escape_string($img);
       //}
