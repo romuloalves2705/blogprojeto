@@ -1,62 +1,11 @@
 <?php
 
-   //require_once $_SERVER['DOCUMENT_ROOT'] . '/curso-blog-2' . '/config/config.php';
-   spl_autoload_register(function ($class) {
-      include "../class/$class/$class.class.php";
-   });
-
-   $session = new Session();
-   if (!$session->validateSession('id')) {
-      header('location: login/login.php?mensagem=Usuário iniciar sessão.&type=warningMensagem');
-   }
+   require 'header.php';
+   require 'navbar.php';
 ?>
-<!doctype html>
-<html lang="pt-br">
-<head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Login ">
-   <meta name="author" content="Romulo Alves">
-   <title>Romulo Blog | Admin</title>
-   <link rel="icon" href="../img/blogicon.png">
-   <link rel="stylesheet" href="../css/dashboard/bootstrap.css">
-   <link rel="stylesheet" href="../css/dashboard/dashboard.css">
-</head>
-
-<body>
-
-   <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><?php echo $session->getValue('usuario') ?></a>
-         </div>
-         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-               <li><a href="#">Meu Blog</a></li>
-               <li><a href="#">Trocar Senha</a></li>
-               <li><a href="sair.php">Sair</a></li>
-            </ul>
-         </div>
-      </div>
-   </nav>
-
    <div class="container-fluid">
       <div class="row">
-         <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-               <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-               <li><a href="#">Criar Post</a></li>
-               <li><a href="#">Analytics</a></li>
-               <li><a href="#">Export</a></li>
-            </ul>
-         </div>
+         <?php require 'sidebar.php'; ?>
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Painel Admin</h1>
             <div class="row placeholder"></div>
@@ -191,7 +140,4 @@
          </div>
       </div>
    </div>
-   <script src="../js/jquery.js" ></script>
-   <script src="../js/bootstrap.js"></script>
-</body>
-</html>
+<?php require 'footer.php'; ?>
