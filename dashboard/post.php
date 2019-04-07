@@ -1,7 +1,7 @@
 <?php
 
-require 'header.php';
-require 'navbar.php';
+   require 'header.php';
+   require 'navbar.php';
 ?>
 <div class="container-fluid">
    <div class="row">
@@ -16,15 +16,15 @@ require 'navbar.php';
             <form>
                <div class="form-group">
                   <label for="titulo">Título</label>
-                  <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="tituloHelp">
+                  <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="tituloHelp" placeholder="Novo titulo">
                </div>
                <div class="form-group">
                   <label for="categoria">Categoria</label>
                   <select class="form-control" id="categoria"></select>
                </div>
                <div class="form-group">
-                  <label for="conteudo">Conteudo</label>
-                  <textarea name="conteudo" class="form-control" id="conteudo" rows="3"></textarea>
+                  <label for="conteudo">Conteúdo</label>
+                  <textarea name="conteudo" class="form-control" id="conteudo" rows="3" placeholder="Conteúdo aqui..."></textarea>
                </div>
                <div class="form-group">
                   <label for="exampleInputFile">Entrada de Arquivo</label>
@@ -33,15 +33,15 @@ require 'navbar.php';
                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
          </div>
-         <div class="col-sm-2  col-md-2 main">
-            <form action="">
+         <div class="col-md-2 main">
+            <form>
                <div class="form-group">
                   <label for="new_categoria">Nova Categoria</label>
-                  <input type="text" name="new_categoria" class="form-control" id="new_categoria" aria-describedby="novacategorialHelp">
+                  <input type="text" class="form-control" id="new_categoria" aria-describedby="novacategorialHelp" placeholder="Nova Categoria">
                </div>
-               <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+               <button type="button" id="submit_categoria" class="btn btn-primary btn-block">Salvar</button>
             </form>
          </div>
       </div>
    </div>
-   <?php require 'footer.php'; ?>
+<?php require 'footer.php'; ?>
