@@ -17,8 +17,8 @@
    <meta name="author" content="Romulo Alves">
    <title>Login | Meu Blog</title>
    <link rel="icon" href="../../img/blogicon.png">
-   <link rel="stylesheet" href="../../css/bootstrap.css">
-   <link rel="stylesheet" href="../../css/signin.css">
+   <link rel="stylesheet" href="../../css/signin/bootstrap.css">
+   <link rel="stylesheet" href="../../css/signin/signin.css">
 </head>
 <body class="text-center">
    <form class="form-signin" method="post" action="validar_login.php">
