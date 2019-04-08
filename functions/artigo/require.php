@@ -10,7 +10,7 @@
 
    $session = new Session();
    if (! $session->validateSession('id')){
-      header('location: ../../dashboard/login/login.php?message= Iniciar a sessão &type=warningMessage');
+      header('location: ../../dashboard/login/login.php?mensagem= Iniciar a sessão &type=warningMensagem');
    }
 
    //$artigo = new Artigo(new Conexao);

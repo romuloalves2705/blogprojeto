@@ -3,10 +3,10 @@
    class Artigo {
       private $con;
       public $titulo;
-      //public $author;
+      public $autor;
       public $categoria_id;
       public $conteudo;
-      //public $img;
+      public $img;
       //public $article_id;
 
       public function __construct(Conexao $con){
@@ -18,6 +18,10 @@
       //   $this->title = ucwords($this->title);
       }
 
+      public function setAutor($autor){
+         $this->autor = $this->con->real_escape_string($autor);
+      }
+
       public function setCategoriaId($categoria_id){
          $this->categoria_id = $this->con->real_escape_string($categoria_id);
       }
@@ -26,16 +30,26 @@
          $this->conteudo = $this->con->real_escape_string($conteudo);
       }
 
+      public function setImg($img){
+         $this->img = $this->con->real_escape_string($img);
+      }
+
 
       public function select(){
          return 'select';
       }
 
-       public function insert(){
-         return 'insert';
+      public function insert() {
+         $query = "INSERT INTO `artigo`(`categoria_id`, `autor`, `titulo`, `conteudo`, `data`, `img`) VALUES
+         ($this->categoria_id, '$this->autor', '$this->titulo', '$this->conteudo', '" . date('Y-m-d') . "', '$this->img')";
+         $this->con->query($query);
+         if($this->con->affected_rows <= 0) {
+            return false;
+         }
+         return true;
       }
 
-       public function update(){
+      public function update(){
          return 'update';
       }
 
@@ -45,14 +59,10 @@
 
       
 
-      //public function setAuthor(string $author){
-      //   $this->author = $this->con->real_escape_string($author);
-      //}
+      
 
       
-      //public function setImg($img){
-      //   $this->img = $this->con->real_escape_string($img);
-      //}
+      
 
       //public function setArticleId($article_id){
       //   $this->article_id = $this->con->real_escape_string($article_id);
@@ -67,15 +77,7 @@
          return $this->con->query($query);
       }*/
 
-      /*public function insert() {
-         $query = "INSERT INTO `articulo`(`categoria_id`, `autor`, `titulo`, `contenido`, `fecha`, `img`) VALUES
-         ($this->categorie_id, '$this->author', '$this->title', '$this->content', '" . date('Y-m-d') . "', '$this->img')";
-         $this->con->query($query);
-         if($this->con->affected_rows <= 0) {
-            return false;
-         }
-         return true;
-      }*/
+      
 
       /*public function update() {
          if(empty($this->img)) {

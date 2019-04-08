@@ -12,7 +12,7 @@
       </div>
       <div class="row">
          <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-            <form action="../functions/artigo/insert.php" method="POST">
+            <form enctype="multipart/form-data" action="../functions/artigo/insert.php" method="POST">
                <div class="form-group">
                   <label for="titulo">Título</label>
                   <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="tituloHelp" placeholder="Novo titulo">
@@ -27,7 +27,7 @@
                </div>
                <div class="form-group">
                   <label for="exampleInputFile">Entrada de Arquivo</label>
-                  <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="entradadearquivoHelp">
+                  <input name="user-file" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="entradadearquivoHelp">
                </div>
                <button name="submit" type="submit" class="btn btn-primary">Enviar</button>
             </form>
