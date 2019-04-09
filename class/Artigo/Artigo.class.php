@@ -58,19 +58,18 @@
       }
 
       public function update() {
-         //if(empty($this->img)) {
-         //   $query = "UPDATE `artigo` SET `categoria_id`= $this->categoria_id, `titulo`= '$this->titulo' 
-         //      `conteudo`= '$this->conteudo' WHERE `artigo_id` = $this->artigo_id";
-         //} else {
-         //   $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', 
-         //      `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
-         //}
-        
-         //$this->con->query($query);
-         //if($this->con->affected_rows <= 0) {
-         //   return false;
-         //}
-         //return true;
+         if(empty($this->img)) {
+            $query = "UPDATE `artigo` SET `categoria_id`= $this->categoria_id, `titulo`= '$this->titulo', 
+            `conteudo`= '$this->conteudo' WHERE `artigo_id` = $this->artigo_id";
+         } else {
+            $query = "UPDATE `artigo` SET `categoria_id`= $this->categoria_id, `titulo`= '$this->titulo', 
+            `conteudo`= '$this->conteudo', `img`='$this->img' WHERE `artigo_id` = $this->artigo_id ";
+         }
+         $this->con->query($query);
+         if($this->con->affected_rows <= 0) {
+            return false;
+         }
+         return true;
       }
 
 

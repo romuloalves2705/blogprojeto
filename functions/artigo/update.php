@@ -19,12 +19,12 @@
    $artigo->setCategoriaId($_POST['categoria_id']);
    $artigo->setConteudo($_POST['conteudo']);
    $artigo->setImg($img);
-   //$artigo->setArtigoId($_POST['id_artigo']);
+   $artigo->setArtigoId($_POST['id_artigo']);
 
    $cliente = new Cliente($artigo);
 
-   if ($cliente->operacao('insert')){
-      header('location: ../../dashboard/post.php?mensagem=Post atualizado com sucesso');
+   if ($cliente->operacao('update')){
+      header('location: ../../dashboard/dashboard.php?mensagem=Post atualizado com sucesso');
       exit();
    }
    header('location: ../../dashboard/dashboard.php?mensagem=Houve um erro ao atualizar o post :(');

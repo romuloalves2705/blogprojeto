@@ -19,11 +19,13 @@
                </div>
                <div class="form-group">
                   <label for="categoria">Categoria</label>
-                  <select name="categoria_id" class="form-control" id="categoria"></select>
+                  <select name="categoria_id" class="form-control" id="categoria">
+                     <!--<option value="0">Esconha uma categoria</option>-->
+                  </select>
                </div>
                <div class="form-group">
                   <label for="conteudo">Conteúdo</label>
-                  <textarea name="conteudo" class="form-control" id="conteudo" rows="5" placeholder="Conteúdo aqui..."></textarea>
+                  <textarea name="conteudo" class="form-control" id="conteudo" rows="4" placeholder="Conteúdo aqui..."></textarea>
                </div>
                <div class="form-group">
                   <label for="exampleInputFile">Entrada de Arquivo</label>

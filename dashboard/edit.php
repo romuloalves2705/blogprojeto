@@ -19,16 +19,19 @@
                </div>
                <div class="form-group">
                   <label for="categoria">Categoria</label>
-                  <select name="categoria_id" class="form-control" id="categoria"></select>
+                  <select name="categoria_id" class="form-control" id="categoria">
+                     <!--<option value="0">Esconha uma categoria</option>-->
+                  </select>
                </div>
                <div class="form-group">
                   <label for="conteudo">Conteúdo</label>
-                  <textarea name="conteudo" class="form-control" id="conteudo" rows="5" placeholder="Conteúdo aqui..."></textarea>
+                  <textarea name="conteudo" class="form-control" id="conteudo" rows="4" placeholder="Conteúdo aqui..."></textarea>
                </div>
                <div class="form-group">
-                  <label for="exampleInputFile">Entrada de Arquivo</label>
-                  <input name="user-file" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="entradadearquivoHelp">
+                  <label for="img">Entrada de Arquivo</label>
+                  <input name="user-file" type="file" class="form-control-file" id="img" aria-describedby="entradadearquivoHelp">
                </div>
+               <input type="hidden" name="id_artigo" id="id_artigo">
                <button name="submit" type="submit" class="btn btn-primary">Enviar</button>
             </form>
          </div>
@@ -42,5 +45,5 @@
             </form>
          </div>
       </div>
-   </div>
+   </div>   
 <?php require 'footer.php'; ?>

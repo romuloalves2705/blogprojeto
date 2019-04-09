@@ -34,15 +34,13 @@ function mostrar_valores_inputs(search) {
       url: '../functions/artigo/select_by_id.php',
       data: {'id': id_artigo}
       })
-      .done(function(result) {
+      .done(function(result) {  
+//       if (!result) return alert('Hubo un error al cargar la información :(')
          var obj = $.parseJSON(result)
-         console.log(obj.titulo)
-//         if (!result) return alert('Hubo un error al cargar la información :(')
-//         var obj = $.parseJSON(result)
          $('#titulo').val(obj.titulo)
          $('#conteudo').val(obj.conteudo)
-//         updateSelectCategorie(obj.categoria_id)
-//         $('#id_article').val(obj.articulo_id)
+         update_select_categoria(obj.categoria_id)
+         $('#id_artigo').val(obj.artigo_id)
       })
       .fail(function() {
          alert('Houve um error ao carregar os artigos :( ')
