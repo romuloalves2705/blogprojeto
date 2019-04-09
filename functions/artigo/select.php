@@ -14,7 +14,7 @@
          $tabela .= "<td>$row[data]</td>";
          $tabela .= "<td>$row[titulo]</td>";
          $tabela .= "<td><a href='edit.php?id=$row[artigo_id]'>Editar</a></td>";
-         $tabela .= "<td><a>Delete</a></td>";
+         $tabela .= "<td><a class='delete' href='../functions/artigo/delete.php?id=$row[artigo_id]'>Delete</a></td>";
          $tabela .= '</tr>';
       //   echo '<tr>';
       //   echo "<td>$row[articulo_id]</td>";

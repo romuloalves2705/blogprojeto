@@ -19,7 +19,7 @@ function imprimir_tabela() {
       })
       .done(function(result) {
          $('#artigos').html(result)
-         //listen_delete()
+         lista_delete()
       })
       .fail(function() {
          alert('Houve um error ao imprimir as artigos :( ')
@@ -47,8 +47,8 @@ function mostrar_valores_inputs(search) {
       })
 }
 
-//function listen_delete() {
-//   $('.delete').on('click', function () {
-//      return confirm('¿Desea eliminar?')
-//   })
-//}
+function lista_delete() {
+   $('.delete').on('click', function () {
+      return confirm('Deseja mesmo excluir?')
+   })
+}

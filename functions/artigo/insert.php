@@ -20,7 +20,7 @@
    $cliente = new Cliente($artigo);
    
    if($cliente->operacao('insert')){
-      header('location: ../../dashboard/post.php?mensagem= Artigo inserido corretamente');
+      header('location: ../../dashboard/dashboard.php?mensagem= Artigo inserido corretamente');
       exit();
    }
    header('location: ../../dashboard/post.php?mensagem= Houve um error ao inserir o artigo :(');
