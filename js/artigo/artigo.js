@@ -4,7 +4,7 @@ $(document).ready(function() {
    var pathfile = path.split('/')
    
    if (pathfile[3] === 'dashboard.php') {
-      imprimir_tabla()
+      imprimir_tabela()
    }
 
    if (pathfile[3] === 'edit.php') {
@@ -13,12 +13,12 @@ $(document).ready(function() {
    
 })
 
-function imprimir_tabla() {
+function imprimir_tabela() {
    $.ajax({
-      url: '../functions/article/select.php'
-   })
+      url: '../functions/artigo/select.php'
+      })
       .done(function(result) {
-         $('#articles').html(result)
+         $('#artigos').html(result)
          //listen_delete()
       })
       .fail(function() {
@@ -28,25 +28,23 @@ function imprimir_tabla() {
 
 function mostrar_valores_inputs(search) {
    var search_array = search.split('=')
-   var id_article = search_array[1]
+   var id_artigo = search_array[1]
    $.ajax({
       type: 'POST',
-      url: '../functions/article/select_by_id.php',
-      data: {'id': id_article}
-   })
-      .done(function (result) {
-         //$('#articles').html(result)
+      url: '../functions/artigo/select_by_id.php',
+      data: {'id': id_artigo}
+      })
+      .done(function(result) {
          var obj = $.parseJSON(result)
-         //alert(result.titulo)
-         //console.log(obj.titulo)
+         console.log(obj.titulo)
 //         if (!result) return alert('Hubo un error al cargar la información :(')
 //         var obj = $.parseJSON(result)
-         $('#title').val(obj.titulo)
-         $('#content').val(obj.contenido)
-         updateSelectCategorie(obj.categoria_id)
-         $('#id_article').val(obj.articulo_id)
+         $('#titulo').val(obj.titulo)
+         $('#conteudo').val(obj.conteudo)
+//         updateSelectCategorie(obj.categoria_id)
+//         $('#id_article').val(obj.articulo_id)
       })
-      .fail(function () {
+      .fail(function() {
          alert('Houve um error ao carregar os artigos :( ')
       })
 }

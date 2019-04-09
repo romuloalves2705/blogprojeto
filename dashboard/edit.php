@@ -8,11 +8,11 @@
       <?php require 'sidebar.php'; ?>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
          <h1 class="page-header">Painel Admin</h1>
-         <h2 class="sub-header">Novo Post</h2>
+         <h2 class="sub-header">Editar de Post</h2>
       </div>
       <div class="row">
          <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-            <form enctype="multipart/form-data" action="../functions/artigo/insert.php" method="POST">
+            <form enctype="multipart/form-data" action="../functions/artigo/update.php" method="POST">
                <div class="form-group">
                   <label for="titulo">Título</label>
                   <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="tituloHelp" placeholder="Novo titulo">

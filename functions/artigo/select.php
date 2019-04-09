@@ -1,22 +1,21 @@
 <?php 
-   //require '../autoload_class.php';
-   //require '../validate_session.php';
+   
    require 'require.php';
 
-   function getArticles() {
-      $article = new Article(new Conexion);
-      $cliente = new Client($article);
-      $res = $cliente->operate('select');
-      $tabla = '';
+   function getArtigos() {
+      $artigo = new Artigo(new Conexao);
+      $cliente = new Cliente($artigo);
+      $res = $cliente->operacao('select');
+      $tabela = '';
       while ($row = $res->fetch_array(MYSQLI_ASSOC)) {
-         $tabla .= '<tr>';
-         $tabla .= "<td>$row[articulo_id]</td>";
-         $tabla .= "<td>$row[autor]</td>"; 
-         $tabla .= "<td>$row[fecha]</td>";
-         $tabla .= "<td>$row[titulo]</td>";
-         $tabla .= "<td><a href='edit.php?id=$row[articulo_id]'>Editar</a></td>";
-         $tabla .= "<td><a>Delete</a></td>";
-         $tabla .= '</tr>';
+         $tabela .= '<tr>';
+         $tabela .= "<td>$row[artigo_id]</td>";
+         $tabela .= "<td>$row[autor]</td>"; 
+         $tabela .= "<td>$row[data]</td>";
+         $tabela .= "<td>$row[titulo]</td>";
+         $tabela .= "<td><a href='edit.php?id=$row[artigo_id]'>Editar</a></td>";
+         $tabela .= "<td><a>Delete</a></td>";
+         $tabela .= '</tr>';
       //   echo '<tr>';
       //   echo "<td>$row[articulo_id]</td>";
       //   echo "<td>$row[autor]</td>";
@@ -26,8 +25,8 @@
       //   echo "<td><a class='delete' href='../functions/article/delete.php?id=$row[articulo_id]'>Eliminar</a></td>";
       //   echo  '</tr>';
       }
-      return $tabla;
+      return $tabela;
    }
 
-  echo  getArticles();
+  echo  getArtigos();
 

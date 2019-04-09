@@ -8,7 +8,7 @@
       }
       
       public function exec() {
-         echo '*' . __CLASS__ . '-> exec</br>';
+         //echo '*' . __CLASS__ . '-> exec</br>';
          return $this->artigo->select();
       }
    }

@@ -20,7 +20,6 @@ $(document).ready(function(){
 })
 
 function update_select_categoria(){
-
    $.ajax({
          type: 'POST',
          url: '../functions/categoriaSelect.php'

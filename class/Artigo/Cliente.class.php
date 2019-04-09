@@ -9,7 +9,7 @@
       protected $delete;
 
       public function __construct(Artigo $artigo) {
-         echo 'Iniciando Cliente </br>';
+         //echo 'Iniciando Cliente </br>';
          $this->artigo = $artigo;
          $this->insert = new InsertComando($this->artigo);
          $this->update = new UpdateComando($this->artigo);
@@ -21,19 +21,19 @@
       public function operacao($action) {
          switch ($action) {
             case 'insert':
-            echo '*** Petição insert </br>';
+            //echo '*** Petição insert </br>';
                return $this->crud->insert();
                break;
             case 'update':
-            echo '*** Petição update </br>';
+            //echo '*** Petição update </br>';
                return $this->crud->update();
                break;
             case 'delete':
-            echo '*** Petição delete </br>';
+            //echo '*** Petição delete </br>';
                return $this->crud->delete();
                break;
             case 'select':
-            echo '*** Petição select </br>';
+            //echo '*** Petição select </br>';
                return $this->crud->select();
                break;
             default:

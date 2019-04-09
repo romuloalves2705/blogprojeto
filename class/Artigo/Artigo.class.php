@@ -1,13 +1,13 @@
 <?php 
 
    class Artigo {
-      private $con;
+      public $con;
       public $titulo;
       public $autor;
       public $categoria_id;
       public $conteudo;
       public $img;
-      //public $article_id;
+      public $artigo_id;
 
       public function __construct(Conexao $con){
          $this->con = $con;
@@ -34,9 +34,17 @@
          $this->img = $this->con->real_escape_string($img);
       }
 
+      public function setArtigoId($artigo_id){
+         $this->artigo_id = $this->con->real_escape_string($artigo_id);
+      }
 
-      public function select(){
-         return 'select';
+      public function select() {
+         if (empty($this->artigo_id)){
+            $query = "SELECT * FROM `artigo` ";
+            return $this->con->query($query);
+         }
+         $query = "SELECT * FROM `artigo` WHERE `artigo_id` = $this->artigo_id "; 
+            return $this->con->query($query);
       }
 
       public function insert() {
@@ -49,9 +57,22 @@
          return true;
       }
 
-      public function update(){
-         return 'update';
+      public function update() {
+         //if(empty($this->img)) {
+         //   $query = "UPDATE `artigo` SET `categoria_id`= $this->categoria_id, `titulo`= '$this->titulo' 
+         //      `conteudo`= '$this->conteudo' WHERE `artigo_id` = $this->artigo_id";
+         //} else {
+         //   $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', 
+         //      `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
+         //}
+        
+         //$this->con->query($query);
+         //if($this->con->affected_rows <= 0) {
+         //   return false;
+         //}
+         //return true;
       }
+
 
        public function delete(){
          return 'delete';
@@ -64,37 +85,12 @@
       
       
 
-      //public function setArticleId($article_id){
-      //   $this->article_id = $this->con->real_escape_string($article_id);
-      //}
-
-      /*public function select() {
-         if (empty($this->article_id)) {
-            $query = "SELECT * FROM `articulo`";
-            return $this->con->query($query);
-         }
-         $query = "SELECT * FROM `articulo` WHERE `articulo_id` = $this->article_id";
-         return $this->con->query($query);
-      }*/
-
       
 
-      /*public function update() {
-         if(empty($this->img)) {
-            $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', 
-               `contenido`= '$this->content' WHERE `articulo_id` = $this->article_id";
-         } else {
-            $query = "UPDATE `articulo` SET `categoria_id`= $this->categorie_id, `titulo`= '$this->title', 
-               `contenido`= '$this->content', `img`='$this->img' WHERE `articulo_id` = $this->article_id";
-         }
-        
-         $this->con->query($query);
-         if($this->con->affected_rows <= 0) {
-            return false;
-         }
-         return true;
-      }*/
+     
+      
 
+      
       /*public function delete() {
          return 'delete';
       }*/

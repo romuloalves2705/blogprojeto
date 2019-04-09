@@ -14,14 +14,15 @@
                <table class="table table-striped table-hover">
                   <thead>
                      <tr>
-                        <th>#</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
+                        <th>#Id</th>
+                        <th>Autor</th>
+                        <th>Data</th>
+                        <th>Titulo</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                      </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="artigos">
                   </tbody>
                </table>
             </div>
