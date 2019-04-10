@@ -22,3 +22,4 @@
    $id = $_POST['id'] ?? '';
    if(!validaId($id)) exit('Id inválido');
    echo getArtigos($id);
+?>   

@@ -11,7 +11,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Meu Blog</a></li>
+            <li><a target="_blank" href="../blog/">Meu Blog</a></li>
             <li><a href="#">Trocar Senha</a></li>
             <li><a href="sair.php">Sair</a></li>
          </ul>
