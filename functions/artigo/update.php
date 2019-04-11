@@ -1,12 +1,13 @@
 <?php 
    
-   require 'require.php';
-   require 'files.php';
+   require '../autoload_class.php';
+   require '../valida_session.php';
+   require '../files/files.php';
 
    $img = '';
 
    if(!empty($_FILES['user-file']['tmp_name'])) {
-      if (! validar($_FILES)) {
+      if (!validar($_FILES)) {
          header('location: ../../dashboard/edit.php');
          exit();
       } 
@@ -23,7 +24,7 @@
 
    $cliente = new Cliente($artigo);
 
-   if ($cliente->operacao('update')){
+   if ($cliente->operacao('update') > 0 ){
       header('location: ../../dashboard/dashboard.php?mensagem=Post atualizado com sucesso');
       exit();
    }

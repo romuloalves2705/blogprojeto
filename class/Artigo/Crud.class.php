@@ -13,30 +13,25 @@
          ,DeleteComando $deleteC
       )
       { 
-         //echo 'Iniciando Crud </br></br>'; 
          $this->insert = $insertC;
          $this->select = $selectC;
          $this->update = $updateC;
          $this->delete = $deleteC;
       }
 
-      public function insert() {
-      //echo '** Crud -> insert </br>';
+      public function insert(): int {
          return $this->insert->exec();
       }
 
-      public function select() {
-      //echo '** Crud -> select </br>';
+      public function select(): mysqli_result {
          return $this->select->exec();
       }
 
-      public function update() {
-      //echo '** Crud -> update </br>';
+      public function update(): int {
          return $this->update->exec();
       }
 
-      public function delete() {
-      //echo '** Crud -> delete </br>';
+      public function delete(): int {
          return $this->delete->exec();
       }
    }

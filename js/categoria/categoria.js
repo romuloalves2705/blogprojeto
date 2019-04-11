@@ -1,23 +1,27 @@
 $(document).ready(function(){
    //Atualizar o select categoria
-   update_select_categoria()
+   updateSelectCategoria()
 
    $('#submit_categoria').on('click', function() {
-      var categoria = $('#new_categoria').val()
-      $.ajax({
-         type: 'POST',
-         url: '../functions/categoriaInsert.php',
-         data: {'categoria': categoria}
-      })
-      .done(function(result){
-         alert(result)
-         update_select_categoria()
-      })
-      .fail(function(){
-         alert('Houve um erro ao adicionar uma nova categoria :( ')
-      }) 
+      insertcategoria()
    })     
 })
+
+function insertCategorie() {
+   var categoria = $('#new_categoria').val()
+   $.ajax({
+      type: 'POST',
+      url: '../functions/categoria/insert.php',
+      data: { 'categoria': categoria }
+   })
+   .done(function (result) {
+      alert(result)
+      updateSelectCategoria()
+   })
+   .fail(function () {
+      alert('Houve um erro ao inserir uma nova categoria :( ')
+   })
+}
 
 function update_select_categoria(){
    $.ajax({

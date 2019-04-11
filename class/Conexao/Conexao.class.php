@@ -1,6 +1,5 @@
 <?php
 
-   //require '../../config/config.php';
    class Conexao extends Mysqli {
       private $host;
       private $user;

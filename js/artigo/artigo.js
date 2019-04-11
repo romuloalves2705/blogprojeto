@@ -1,13 +1,13 @@
 $(document).ready(function() {
    // carregar a tabela de artigos
-   var path = $(location).attr('pathname')
-   var pathfile = path.split('/')
+   var path = $(location).attr('pathname').split('/')
+   var file = path[3]
    
-   if (pathfile[3] === 'dashboard.php') {
+   if (file === 'dashboard.php') {
       imprimir_tabela()
    }
 
-   if (pathfile[3] === 'edit.php') {
+   if (file === 'edit.php') {
       mostrar_valores_inputs($(location).attr('search'))
    }
    
@@ -34,13 +34,13 @@ function mostrar_valores_inputs(search) {
       url: '../functions/artigo/select_by_id.php',
       data: {'id': id_artigo}
       })
-      .done(function(result) {  
-//       if (!result) return alert('Hubo un error al cargar la información :(')
-         var obj = $.parseJSON(result)
-         $('#titulo').val(obj.titulo)
-         $('#conteudo').val(obj.conteudo)
-         update_select_categoria(obj.categoria_id)
-         $('#id_artigo').val(obj.artigo_id)
+      .done(function(result) { 
+         if (!result) return alert('Houve um erro ao carregar a informação :(')
+            var obj = $.parseJSON(result)
+            $('#titulo').val(obj.titulo)
+            $('#conteudo').val(obj.conteudo)
+            updateSelectCategoria(obj.categoria_id)
+            $('#id_artigo').val(obj.artigo_id)
       })
       .fail(function() {
          alert('Houve um error ao carregar os artigos :( ')

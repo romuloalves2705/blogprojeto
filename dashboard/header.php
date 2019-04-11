@@ -6,7 +6,7 @@
    });
 
    $session = new Session();
-   if (!$session->validateSession('id')) {
+   if (! $session->validateSession('id')) {
       header('location: login/login.php?mensagem=Usuário iniciar sessão.&type=warningMensagem');
    }
 ?>

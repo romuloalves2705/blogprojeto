@@ -1,16 +1,13 @@
 <?php 
    
-   require 'require.php';
+   require '../autoload_class.php';
+   require '../valida_session.php';
    
    function validaId($id) {
-      if(!is_numeric($id) || $id <= 0) {
-         return false;
-     }
-      return true;
-   //   return is_numeric($id) and $id > 0;
+      return is_numeric($id) and $id > 0;
    }
 
-   function getArtigos($id) {
+   function getArtigo(int $id) {
       $artigo = new Artigo(new Conexao);
       $artigo->setArtigoId($id);
       $cliente = new Cliente($artigo);
@@ -20,6 +17,6 @@
    }
 
    $id = $_POST['id'] ?? '';
-   if(!validaId($id)) exit('Id inválido');
-   echo getArtigos($id);
-?>   
+   if(!validaId($id)) exit(false);
+   echo getArtigo($id);
+  

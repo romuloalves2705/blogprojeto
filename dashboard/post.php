@@ -7,7 +7,6 @@
    <div class="row">
       <?php require 'sidebar.php'; ?>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-         <h1 class="page-header">Painel Admin</h1>
          <h2 class="sub-header">Novo Post</h2>
       </div>
       <div class="row">
@@ -20,7 +19,7 @@
                <div class="form-group">
                   <label for="categoria">Categoria</label>
                   <select name="categoria_id" class="form-control" id="categoria">
-                     <!--<option value="0">Esconha uma categoria</option>-->
+                     <option value="0">Esconha uma categoria</option>
                   </select>
                </div>
                <div class="form-group">

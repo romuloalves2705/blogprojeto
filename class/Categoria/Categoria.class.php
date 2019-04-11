@@ -15,25 +15,13 @@
 
       public function insert() {
          $query = "INSERT INTO `categoria`(`categoria`) VALUES ('$this->name')";
-         if ($this->con->query($query))
-            return 'Categoria salva com sucesso';
-            return 'Houve um erro';
-         //$res = $this->con->query($query);
-         //return $this->con->affected_rows;
-      //   if ($this->con->query($query)) 
-      //      return 'Categoria adicionada com sucesso';
-      //      return 'Houve um erro ao adicionar a nova categoria';
+         $this->con->query($query);
+         return $this->con->affected_rows;
       }
 
-      public function selectToArray() {
+      public function select() {
          $query = "SELECT * FROM `categoria`";
-         $res = $this->con->query($query);
-         $categorias = '<option value="Não">Esconha uma categoria</option>';
-         while($row = $res->fetch_array(MYSQLI_ASSOC)) {
-            $categorias .= "<option value='$row[categoria_id]'>$row[categoria]</option>";
-         }
-         return $categorias;
-      //   return $this->con->query($query);
+         return $this->con->query($query);
       }
    }
 ?>   

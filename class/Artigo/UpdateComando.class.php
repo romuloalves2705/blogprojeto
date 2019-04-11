@@ -7,8 +7,7 @@
          $this->artigo = $artigo;
       }
       
-      public function exec() {
-         echo '*' . __CLASS__ . '-> exec</br>';
+      public function exec(): int {
          return $this->artigo->update();
       }
    }

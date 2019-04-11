@@ -2,6 +2,6 @@
 
    abstract class Mensagem {
 
-      abstract public function getMensagem($mensagem) ;
+      abstract public function getMensagem(string $mensagem): string;
    }
 ?>

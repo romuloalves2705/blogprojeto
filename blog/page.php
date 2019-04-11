@@ -1,5 +1,6 @@
 <?php
 
+   require '../functions/autoload_class.php';
    require '../functions/blog/page.php';
 ?>
 <!doctype html>
@@ -16,28 +17,18 @@
    <link rel="stylesheet" href="../css/blog/blog1.css">
 </head>
 <body>
-   <div class="blog-masthead">
-      <div class="container">
-         <nav class="nav blog-nav">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">New features</a>
-            <a class="nav-link" href="#">Press</a>
-            <a class="nav-link" href="#">New hires</a>
-            <a class="nav-link" href="#">About</a>
-         </nav>
-      </div>
-   </div>
+   <?php include 'navbar.php'; ?>
    <div class="container">
       <div class="blog-header">
          <h1 class="blog-title">Romulo Blog</h1>
          <p class="lead blog-description">Este blog aborda varios assuntos da atualidade.</p>
       </div>
       <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
             <?php echo getArtigo(getId()); ?>
          </div>
       </div>
    </div>
-   <?php include_once ('footer.php')?>
+   <?php include_once('footer.php')?>
 </body>
 </html>

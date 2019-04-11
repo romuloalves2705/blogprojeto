@@ -1,10 +1,11 @@
 <?php
 
-   require 'require.php';
-   require 'files.php';
+   require '../autoload_class.php';
+   require '../valida_session.php';
+   require '../files/files.php';
    
    if (! validar($_FILES)) {
-      header('location: ../../dashboard/post.php');
+      header('location: ../../dashboard/post.php?mensagem=Nenhuma imagem selecionada');
       exit();
    }
    
@@ -19,8 +20,8 @@
 
    $cliente = new Cliente($artigo);
    
-   if($cliente->operacao('insert')){
-      header('location: ../../dashboard/dashboard.php?mensagem= Artigo inserido corretamente');
+   if($cliente->operacao('insert') > 0){
+      header('location: ../../dashboard/post.php?mensagem= Artigo inserido corretamente');
       exit();
    }
    header('location: ../../dashboard/post.php?mensagem= Houve um error ao inserir o artigo :(');

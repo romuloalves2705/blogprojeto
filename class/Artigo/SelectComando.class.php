@@ -7,8 +7,7 @@
          $this->artigo = $artigo;
       }
       
-      public function exec() {
-         //echo '*' . __CLASS__ . '-> exec</br>';
+      public function exec(): mysqli_result {
          return $this->artigo->select();
       }
    }

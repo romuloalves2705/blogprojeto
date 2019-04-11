@@ -1,4 +1,6 @@
 <?php
+
+   require_once $_SERVER['DOCUMENT_ROOT'] . '/blog' . '/config/config.php';
    spl_autoload_register(function ($class) {
       include "../class/$class/$class.class.php";
    });

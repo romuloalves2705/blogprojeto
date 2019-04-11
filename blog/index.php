@@ -1,5 +1,6 @@
 <?php
 
+   require '../functions/autoload_class.php';
    require '../functions/blog/inicio.php';
 ?>
 <!doctype html>
@@ -16,17 +17,7 @@
    <link rel="stylesheet" href="../css/blog/blog1.css">
 </head>
 <body>
-   <div class="blog-masthead">
-      <div class="container">
-         <nav class="nav blog-nav">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">New features</a>
-            <a class="nav-link" href="#">Press</a>
-            <a class="nav-link" href="#">New hires</a>
-            <a class="nav-link" href="#">About</a>
-         </nav>
-      </div>
-   </div>
+   <?php include 'navbar.php'; ?>
    <div class="container">
       <div class="blog-header">
          <h1 class="blog-title">Romulo Blog</h1>
@@ -37,12 +28,10 @@
             <?php echo getArtigos();?>
             <nav class="blog-pagination">
                <a class="btn btn-outline-primary" href="#">Older</a>
-               <a class="btn btn-outline-secondary" href="#">Newer</a>
+               <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
             </nav>
-         </div><!--blog-main -->
+         </div>
          <?php include_once ('aside.php')?>
-      </div><!--row -->
-   </div><!--container -->
+      </div>
+   </div>
    <?php include_once ('footer.php')?>
-</body>
-</html>

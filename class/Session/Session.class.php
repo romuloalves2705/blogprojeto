@@ -3,7 +3,10 @@
    class Session {
 
       public function __construct() {
-         session_start();
+         session_start([
+            'cache_limiter' => 'private',
+            'cookie_httponly' => true
+         ]);
       }
 
       public function addValue($key, $value) {

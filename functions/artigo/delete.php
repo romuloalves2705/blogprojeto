@@ -1,6 +1,7 @@
 <?php
 
-   require 'require.php';
+   require '../autoload_class.php';
+   require '../valida_session.php';
 
    if (empty($_GET['id'])) exit('Id não foi recebido');
    if (!is_numeric($_GET['id']) or $_GET['id'] <= 0) exit('Houve um error');
